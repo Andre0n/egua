@@ -1,0 +1,65 @@
+var testes = importar("testes"); //Importando a biblioteca;
+
+var testes_basicos = função(){
+  //Inicia novo conjuto de testes.
+  testes.novo_conjunto("Testes básicos");
+
+  testes.novo_teste("Verifica se 1 == 1").esperado_que(1 == 1).seja_verdadeiro();
+  testes.novo_teste("Verifica se 1 != 2").esperado_que(1 == 2).seja_falso();
+
+
+  // Finaliza o conjunto de testes e mostra o resultado!.
+  escreva(testes.resultados());
+};
+
+var testes_objetos = função(){
+    testes.novo_conjunto("Testes de objetos");
+     // Exemplos testes com objetos
+    testes.novo_teste("Verifica se [1, 2] == [1, 2]").esperado_que([1,2]).seja_objeto([1, 2]);
+    testes.novo_teste("Verifica se {one: 1, two: 2} == {one: 1, two: 2}")
+                          .esperado_que({"one": 1, "two": 2})
+                          .seja_objeto({"one": 1, "two": 2});
+    escreva(testes.resultados());
+
+};
+
+
+var testes_numeros = função(){
+  //Inicia novo conjuto de testes.
+  testes.novo_conjunto("Testes de números");
+ 
+  // Exemplos testes com números
+  testes.novo_teste("Verifica se 0.1 + 0.2 == 0.3").esperado_que(0.1 + 0.2).seja(0.3);
+  testes.novo_teste("Vefica se 0.1 + 0.3 é próximo a 0.3").esperado_que(0.1 + 0.2).seja_proximo(0.3);
+
+  // Finaliza o conjunto de testes e mostra o resultado!.
+  escreva(testes.resultados());
+};
+
+testes_basicos();
+
+testes_objetos();
+
+testes_numeros();
+
+// Saída desse programa 
+//
+// Testes básicos -- PASSOU
+//   ✔  Verifica se 1 == 1
+//   ✔  Verifica se 1 != 2
+// Testes: 2 passou, 0 falhou, 2 total
+//
+// Testes de objetos -- PASSOU
+//   ✔  Verifica se [1, 2] == [1, 2]
+//   ✔  Verifica se {one: 1, two: 2} == {one: 1, two: 2}
+// Testes: 2 passou, 0 falhou, 2 total
+//
+// Testes de números -- FALHOU
+//   ✖  Verifica se 0.1 + 0.2 == 0.3
+// 	 ● Testes de números > Verifica se 0.1 + 0.2 == 0.3  
+// 	        esperado_que(obtido).seja(esperado) //Object.is igualdade
+// 	        Esperado: 0.3
+// 	        Obtido: 0.30000000000000004
+//   ✔  Vefica se 0.1 + 0.3 é próximo a 0.3
+// Testes: 1 passou, 1 falhou, 2 total
+
