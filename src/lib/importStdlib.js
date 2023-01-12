@@ -13,7 +13,10 @@ const loadModule = function (moduleName, modulePath) {
         let currentItem = moduleData[keys[i]];
 
         if (typeof currentItem === "function") {
-            newModule[keys[i]] = new StandardFn(currentItem.length, currentItem);
+            newModule[keys[i]] = new StandardFn(
+                currentItem.length,
+                currentItem
+            );
         } else {
             newModule[keys[i]] = currentItem;
         }
@@ -28,6 +31,8 @@ module.exports = function (name) {
             return loadModule("tempo", "./tempo.js");
         case "matematica":
             return loadModule("matematica", "./matematica.js");
+        case "testes":
+            return loadModule("testes", "./testes");
     }
 
     return null;
