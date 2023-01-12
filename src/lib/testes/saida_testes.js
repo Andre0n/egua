@@ -1,7 +1,7 @@
 const reporta_seja = (esperado, obtido) => {
     let menssagem =
         "\tesperado_que(obtido).seja(esperado) //Object.is igualdade";
-    menssagem += `\tEsperado: ${esperado}\nObtido: ${obtido}`;
+    menssagem += `\n\tEsperado: ${esperado}\n\tObtido: ${obtido}`;
     return menssagem;
 };
 
